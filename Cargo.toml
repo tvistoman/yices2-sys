@@ -4,11 +4,11 @@ build                                   = "build.rs"
 categories                              = [ "external-ffi-bindings" ]
 description                             = "Low-level bindings for the Yices2 SMT solver"
 edition                                 = "2018"
-homepage                                = "https://github.com/tvistoman/yices-sys"
+homepage                                = "https://github.com/tvistoman/yices2-sys"
 keywords                                = [ "ffi", "smt" ]
 license                                 = "MIT"
-name                                    = "yices-sys"
-repository                              = "https://github.com/tvistoman/yices-sys"
+name                                    = "yices2-sys"
+repository                              = "https://github.com/tvistoman/yices2-sys"
 version                                 = "0.1.0"
 links                                   = "yices"
 
