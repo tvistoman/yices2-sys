@@ -1,2 +1,2 @@
-# yices-sys
-Yices2 SMT solver
+# yices2-sys
+This Rust crate provides low-level bindings for the Yices2 SMT solver
