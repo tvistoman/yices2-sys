@@ -5,12 +5,13 @@ bindgen \
     --whitelist-function 'yices(.*)$' \
     --generate functions \
     --no-doc-comments \
+    --raw-line 'use libc::FILE;' \
     ../yices2/src/include/yices.h
 
 bindgen \
     --output types.rs \
     --generate types \
-    --whitelist-type '(.*)_[st]|(FILE)' \
+    --whitelist-type '(.*)_[st]' \
     --no-doc-comments \
     --no-prepend-enum-name \
     ../yices2/src/include/yices.h
