@@ -21,7 +21,6 @@ bindgen \
     --generate vars \
     --whitelist-var 'yices_version' \
     --no-doc-comments \
-    --raw-line 'use libc::FILE;' \
     --no-prepend-enum-name \
     ../yices2/src/include/yices.h
 
