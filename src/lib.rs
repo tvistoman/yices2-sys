@@ -2,3 +2,4 @@
 
 include!("../generated/bindings.rs");
 include!("../generated/types.rs");
+include!("../generated/types.rs");
