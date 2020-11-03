@@ -521,6 +521,7 @@ pub const MDL_GEN_TYPE_NOT_SUPPORTED: error_code = 900;
 pub const MDL_GEN_NONLINEAR: error_code = 901;
 pub const MDL_GEN_FAILED: error_code = 902;
 pub const MCSAT_ERROR_UNSUPPORTED_THEORY: error_code = 1000;
+pub const MCSAT_ERROR_NAMED_TERMS_NOT_SUPPORTED: error_code = 1001;
 pub const OUTPUT_ERROR: error_code = 9000;
 pub const INTERNAL_EXCEPTION: error_code = 9999;
 pub type error_code = i32;
@@ -631,6 +632,70 @@ fn bindgen_test_layout_error_report_s() {
     );
 }
 pub type error_report_t = error_report_s;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct interpolation_context_s {
+    pub ctx_A: *mut context_t,
+    pub ctx_B: *mut context_t,
+    pub interpolant: term_t,
+    pub model: *mut model_t,
+}
+#[test]
+fn bindgen_test_layout_interpolation_context_s() {
+    assert_eq!(
+        ::std::mem::size_of::<interpolation_context_s>(),
+        32usize,
+        concat!("Size of: ", stringify!(interpolation_context_s))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<interpolation_context_s>(),
+        8usize,
+        concat!("Alignment of ", stringify!(interpolation_context_s))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<interpolation_context_s>())).ctx_A as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(interpolation_context_s),
+            "::",
+            stringify!(ctx_A)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<interpolation_context_s>())).ctx_B as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(interpolation_context_s),
+            "::",
+            stringify!(ctx_B)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<interpolation_context_s>())).interpolant as *const _ as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(interpolation_context_s),
+            "::",
+            stringify!(interpolant)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<interpolation_context_s>())).model as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(interpolation_context_s),
+            "::",
+            stringify!(model)
+        )
+    );
+}
+pub type interpolation_context_t = interpolation_context_s;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __crt_locale_data {

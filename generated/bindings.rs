@@ -826,6 +826,22 @@ extern "C" {
     ) -> smt_status_t;
 }
 extern "C" {
+    pub fn yices_check_context_with_model(
+        ctx: *mut context_t,
+        params: *const param_t,
+        mdl: *mut model_t,
+        n: u32,
+        t: *const term_t,
+    ) -> smt_status_t;
+}
+extern "C" {
+    pub fn yices_check_context_with_interpolation(
+        ctx: *mut interpolation_context_t,
+        params: *const param_t,
+        build_model: i32,
+    ) -> smt_status_t;
+}
+extern "C" {
     pub fn yices_assert_blocking_clause(ctx: *mut context_t) -> i32;
 }
 extern "C" {
@@ -849,6 +865,9 @@ extern "C" {
 }
 extern "C" {
     pub fn yices_get_unsat_core(ctx: *mut context_t, v: *mut term_vector_t) -> i32;
+}
+extern "C" {
+    pub fn yices_get_model_interpolant(ctx: *mut context_t) -> term_t;
 }
 extern "C" {
     pub fn yices_get_model(ctx: *mut context_t, keep_subst: i32) -> *mut model_t;

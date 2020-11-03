@@ -16,6 +16,14 @@ bindgen \
     --no-prepend-enum-name \
     ../yices2/src/include/yices.h
 
+bindgen \
+    --output vars.rs \
+    --generate vars \
+    --whitelist-var 'yices_version' \
+    --no-doc-comments \
+    --no-prepend-enum-name \
+    ../yices2/src/include/yices.h
+
 # bindgen \--whitelist-type '((.*)_[st])|(FILE)' \
 #     --output yices_exit_codes.rs \
 #     --generate types \

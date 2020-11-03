@@ -9,7 +9,7 @@ keywords                                = [ "ffi", "smt" ]
 license                                 = "MIT"
 name                                    = "yices2-sys"
 repository                              = "https://github.com/tvistoman/yices2-sys"
-version                                 = "0.1.0"
+version                                 = "0.2.0"
 links                                   = "yices"
 
 [dependencies]
